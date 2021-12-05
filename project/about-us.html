@@ -46,21 +46,34 @@
                 </li>
             </div>
 
-            <!-- right element -->
-            <div class="navbar-nav d-flex flex-row justify-content-end">
-                <li class="nav-item me-1">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-search icon-style"></i>
-                    </a>
-                </li>
-                <li class="nav-item me-1">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-basket icon-style"></i>
-                    </a>
-                </li>
-            </div>
+        <!-- right element -->
+        <div class="navbar-nav d-flex flex-row justify-content-end">
+            <li class="nav-item me-1">
+                <div class="search">
+                    <div class="icon"></div>
+                    <div class="input">
+                        <input type="text" placeholder="Search" id="mysearch">
+                    </div>
+                    <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
+                </div>
+            </li>
+            <li class="nav-item me-1">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-basket icon-style"></i>
+                </a>
+            </li>
         </div>
-    </nav>
+        </div>
+        </nav>
+        
+        
+        <script>
+            const icon = document.querySelector('.icon');
+            const search = document.querySelector('.search');
+            icon.onclick = function () {
+                search.classList.toggle('active')
+            }
+        </script>
 
     <!-- navbar logo -->
     <nav class="navbar justify-content-center" style="background-color: #f1dca7;">

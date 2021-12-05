@@ -50,9 +50,13 @@
         <!-- right element -->
         <div class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item me-1">
-            <a class="nav-link" href="#">
-            <i class="bi bi-search icon-style"></i>
-            </a>
+            <div class="search" > 
+                <div class="icon" ></div>
+                <div class="input" >
+                    <input type="text" placeholder="Search" id="mysearch">
+                </div>
+                <span class="clear" onclick="document.getElementById('mysearch').value = ''" ></span>
+            </div>
             </li>
             <li class="nav-item me-1">
             <a class="nav-link" href="#">
@@ -62,6 +66,15 @@
         </div>
     </div>
     </nav> 
+
+
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
 
 <!-- navbar logo -->
 <nav class="navbar justify-content-center" style="background-color: #f1dca7;" >
@@ -86,6 +99,17 @@
 <div class="alert alert-info alert-dismissible mb-0" role="alert">
 New Collection on December 2021, check it out!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
 </div>
+
+<script>
+    let alertAnimation = document.getElementsByClassName("alert-info");
+    setInterval(function() {
+        alertAnimation[0].style.color = "#5b5f62";
+
+        setTimeout(function(){
+            alertAnimation[0].style.color = "darkred";
+        }, 500)
+    },1000);
+</script>
 
 <!-- carousel -->
 <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -328,9 +352,17 @@ New Collection on December 2021, check it out!<button type="button" class="btn-c
                 <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+            <button onclick="myFunction()" type="submit" class="btn btn-primary w-100">Submit</button>
         </form>
-
+<script>
+    function myFunction() {
+        if (confirm("Are you sure do you want to submit?")) {
+            alert("Submitted!");
+        } else {
+            alert("Please fill in the form below.");
+        }
+    }
+</script>
     
     </div>
 </div>
