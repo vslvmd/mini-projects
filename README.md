@@ -1,1 +1,1 @@
-membuat mini-project website menggunakan HTML, CSS, dan Bootstrap
+membuat mini-project website menggunakan HTML, CSS, DOM dan Bootstrap
